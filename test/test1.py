@@ -1,4 +1,5 @@
-import reprlib
-l = [1,2]
-result = reprlib.repr(l)
-print(type(result))
+BASE_URL = '111'
+cc = "ABC"
+# url = '{}/{cc}/{cc}.gif'.format(BASE_URL, cc=cc.lower())
+url = '{}/{bb}/{bb}.gif'.format(BASE_URL, bb=cc.lower())
+print(url)
