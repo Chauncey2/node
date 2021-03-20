@@ -74,15 +74,15 @@ class Event(DbRecord):
 def load_db(db):
     raw_data = osconfeed.load()
     warnings.warn('loading ' + DB_NAME)
-    for collection,rec_list in raw_data['Schedule'].items():
+    for collection, rec_list in raw_data['Schedule'].items():
         record_type = collection[:-1]
         cls_name = record_type.capitalize()
         cls = globals().get(cls_name, DbRecord)
-        if inspect.isclass(cls) and issubclass(cls,DbRecord):
+        if inspect.isclass(cls) and issubclass(cls, DbRecord):
             factory = DbRecord
         for record in rec_list:
             key = '{}.{}'.format(record_type, record['serial'])
 
 
 if __name__ == '__main__':
-     pass
+    pass
